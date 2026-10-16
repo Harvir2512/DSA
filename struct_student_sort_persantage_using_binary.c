@@ -9,8 +9,8 @@ struct student s1[10];
 void bubble_sort(int n)
 {
 	int i,j;
-	float temp;
-	char temp1[10];
+	struct student temp;
+	
 	
 	for(j=1; j<n; j++)
 	{
@@ -18,18 +18,10 @@ void bubble_sort(int n)
 	    {
 		    if(s1[i].per>s1[i+1].per)
 		    {
-			    temp=s1[i].per;
-			    s1[i].per=s1[i+1].per;
-			    s1[i+1].per=temp;
+		    	temp=s1[i];
+		    	s1[i]=s1[i+1];
+		    	s1[i+1]=temp;
 	        }
-  		   if(s1[i].sname>s1[i+1].sname)
-		    {
-			   strcpy(temp1,s1[i].sname);
-			   strcpy(s1[i].sname,s1[i+1].sname);
-			   strcpy(s1[i+1].sname,temp1);
-			  
-			}
-
     	}
     }
 	printf("\ndisplay sort persantage infromation\n");
@@ -37,7 +29,7 @@ void bubble_sort(int n)
 	{
 		printf("\n%d",s1[i].sno);
 		printf("\n%s",s1[i].sname);
-		printf("\n%f",s1[i].per);
+		printf("\n%.2f",s1[i].per);
 	}
 	
 }
